@@ -3,7 +3,7 @@
 <mapper namespace="com.example.domain.mapper.TaskMapper">
   <resultMap id="BaseResultMap" type="com.example.domain.entity.Task">
     <id column="task_id" jdbcType="BIGINT" property="taskId" />
-    <result column="task_content" jdbcType="VARCHAR" property="taskContent" />
+    <result column="task_name" jdbcType="VARCHAR" property="taskName" />
     <result column="task_end_at" jdbcType="TIMESTAMP" property="taskEndAt" />
     <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
     <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
@@ -70,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    task_id, task_content, task_end_at, created_at, created_by, updated_at, updated_by, 
+    task_id, task_name, task_end_at, created_at, created_by, updated_at, updated_by, 
     user_id
   </sql>
   <select id="selectByExample" parameterType="com.example.domain.entity.TaskExample" resultMap="BaseResultMap">
@@ -104,10 +104,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.example.domain.entity.Task">
-    insert into task (task_id, task_content, task_end_at, 
+    insert into task (task_id, task_name, task_end_at, 
       created_at, created_by, updated_at, 
       updated_by, user_id)
-    values (#{taskId,jdbcType=BIGINT}, #{taskContent,jdbcType=VARCHAR}, #{taskEndAt,jdbcType=TIMESTAMP}, 
+    values (#{taskId,jdbcType=BIGINT}, #{taskName,jdbcType=VARCHAR}, #{taskEndAt,jdbcType=TIMESTAMP}, 
       #{createdAt,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}, #{updatedAt,jdbcType=TIMESTAMP}, 
       #{updatedBy,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT})
   </insert>
@@ -117,8 +117,8 @@
       <if test="taskId != null">
         task_id,
       </if>
-      <if test="taskContent != null">
-        task_content,
+      <if test="taskName != null">
+        task_name,
       </if>
       <if test="taskEndAt != null">
         task_end_at,
@@ -143,8 +143,8 @@
       <if test="taskId != null">
         #{taskId,jdbcType=BIGINT},
       </if>
-      <if test="taskContent != null">
-        #{taskContent,jdbcType=VARCHAR},
+      <if test="taskName != null">
+        #{taskName,jdbcType=VARCHAR},
       </if>
       <if test="taskEndAt != null">
         #{taskEndAt,jdbcType=TIMESTAMP},
@@ -178,8 +178,8 @@
       <if test="record.taskId != null">
         task_id = #{record.taskId,jdbcType=BIGINT},
       </if>
-      <if test="record.taskContent != null">
-        task_content = #{record.taskContent,jdbcType=VARCHAR},
+      <if test="record.taskName != null">
+        task_name = #{record.taskName,jdbcType=VARCHAR},
       </if>
       <if test="record.taskEndAt != null">
         task_end_at = #{record.taskEndAt,jdbcType=TIMESTAMP},
@@ -207,7 +207,7 @@
   <update id="updateByExample" parameterType="map">
     update task
     set task_id = #{record.taskId,jdbcType=BIGINT},
-      task_content = #{record.taskContent,jdbcType=VARCHAR},
+      task_name = #{record.taskName,jdbcType=VARCHAR},
       task_end_at = #{record.taskEndAt,jdbcType=TIMESTAMP},
       created_at = #{record.createdAt,jdbcType=TIMESTAMP},
       created_by = #{record.createdBy,jdbcType=VARCHAR},
@@ -221,8 +221,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.example.domain.entity.Task">
     update task
     <set>
-      <if test="taskContent != null">
-        task_content = #{taskContent,jdbcType=VARCHAR},
+      <if test="taskName != null">
+        task_name = #{taskName,jdbcType=VARCHAR},
       </if>
       <if test="taskEndAt != null">
         task_end_at = #{taskEndAt,jdbcType=TIMESTAMP},
@@ -247,7 +247,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.domain.entity.Task">
     update task
-    set task_content = #{taskContent,jdbcType=VARCHAR},
+    set task_name = #{taskName,jdbcType=VARCHAR},
       task_end_at = #{taskEndAt,jdbcType=TIMESTAMP},
       created_at = #{createdAt,jdbcType=TIMESTAMP},
       created_by = #{createdBy,jdbcType=VARCHAR},

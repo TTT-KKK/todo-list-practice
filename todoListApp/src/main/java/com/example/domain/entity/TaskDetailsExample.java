@@ -225,73 +225,73 @@ public class TaskDetailsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentIsNull() {
-            addCriterion("task_content is null");
+        public Criteria andTaskNameIsNull() {
+            addCriterion("task_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentIsNotNull() {
-            addCriterion("task_content is not null");
+        public Criteria andTaskNameIsNotNull() {
+            addCriterion("task_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentEqualTo(String value) {
-            addCriterion("task_content =", value, "taskContent");
+        public Criteria andTaskNameEqualTo(String value) {
+            addCriterion("task_name =", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentNotEqualTo(String value) {
-            addCriterion("task_content <>", value, "taskContent");
+        public Criteria andTaskNameNotEqualTo(String value) {
+            addCriterion("task_name <>", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentGreaterThan(String value) {
-            addCriterion("task_content >", value, "taskContent");
+        public Criteria andTaskNameGreaterThan(String value) {
+            addCriterion("task_name >", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentGreaterThanOrEqualTo(String value) {
-            addCriterion("task_content >=", value, "taskContent");
+        public Criteria andTaskNameGreaterThanOrEqualTo(String value) {
+            addCriterion("task_name >=", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentLessThan(String value) {
-            addCriterion("task_content <", value, "taskContent");
+        public Criteria andTaskNameLessThan(String value) {
+            addCriterion("task_name <", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentLessThanOrEqualTo(String value) {
-            addCriterion("task_content <=", value, "taskContent");
+        public Criteria andTaskNameLessThanOrEqualTo(String value) {
+            addCriterion("task_name <=", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentLike(String value) {
-            addCriterion("task_content like", value, "taskContent");
+        public Criteria andTaskNameLike(String value) {
+            addCriterion("task_name like", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentNotLike(String value) {
-            addCriterion("task_content not like", value, "taskContent");
+        public Criteria andTaskNameNotLike(String value) {
+            addCriterion("task_name not like", value, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentIn(List<String> values) {
-            addCriterion("task_content in", values, "taskContent");
+        public Criteria andTaskNameIn(List<String> values) {
+            addCriterion("task_name in", values, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentNotIn(List<String> values) {
-            addCriterion("task_content not in", values, "taskContent");
+        public Criteria andTaskNameNotIn(List<String> values) {
+            addCriterion("task_name not in", values, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentBetween(String value1, String value2) {
-            addCriterion("task_content between", value1, value2, "taskContent");
+        public Criteria andTaskNameBetween(String value1, String value2) {
+            addCriterion("task_name between", value1, value2, "taskName");
             return (Criteria) this;
         }
 
-        public Criteria andTaskContentNotBetween(String value1, String value2) {
-            addCriterion("task_content not between", value1, value2, "taskContent");
+        public Criteria andTaskNameNotBetween(String value1, String value2) {
+            addCriterion("task_name not between", value1, value2, "taskName");
             return (Criteria) this;
         }
 
