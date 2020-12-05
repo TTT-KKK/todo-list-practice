@@ -6,7 +6,7 @@ import java.util.Date;
 public class Task implements Serializable {
     private Long taskId;
 
-    private String taskContent;
+    private String taskName;
 
     private Date taskEndAt;
 
@@ -30,12 +30,12 @@ public class Task implements Serializable {
         this.taskId = taskId;
     }
 
-    public String getTaskContent() {
-        return taskContent;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public void setTaskContent(String taskContent) {
-        this.taskContent = taskContent == null ? null : taskContent.trim();
+    public void setTaskName(String taskName) {
+        this.taskName = taskName == null ? null : taskName.trim();
     }
 
     public Date getTaskEndAt() {
@@ -93,7 +93,7 @@ public class Task implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", taskId=").append(taskId);
-        sb.append(", taskContent=").append(taskContent);
+        sb.append(", taskName=").append(taskName);
         sb.append(", taskEndAt=").append(taskEndAt);
         sb.append(", createdAt=").append(createdAt);
         sb.append(", createdBy=").append(createdBy);
@@ -118,7 +118,7 @@ public class Task implements Serializable {
         }
         Task other = (Task) that;
         return (this.getTaskId() == null ? other.getTaskId() == null : this.getTaskId().equals(other.getTaskId()))
-            && (this.getTaskContent() == null ? other.getTaskContent() == null : this.getTaskContent().equals(other.getTaskContent()))
+            && (this.getTaskName() == null ? other.getTaskName() == null : this.getTaskName().equals(other.getTaskName()))
             && (this.getTaskEndAt() == null ? other.getTaskEndAt() == null : this.getTaskEndAt().equals(other.getTaskEndAt()))
             && (this.getCreatedAt() == null ? other.getCreatedAt() == null : this.getCreatedAt().equals(other.getCreatedAt()))
             && (this.getCreatedBy() == null ? other.getCreatedBy() == null : this.getCreatedBy().equals(other.getCreatedBy()))
@@ -132,7 +132,7 @@ public class Task implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
-        result = prime * result + ((getTaskContent() == null) ? 0 : getTaskContent().hashCode());
+        result = prime * result + ((getTaskName() == null) ? 0 : getTaskName().hashCode());
         result = prime * result + ((getTaskEndAt() == null) ? 0 : getTaskEndAt().hashCode());
         result = prime * result + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         result = prime * result + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

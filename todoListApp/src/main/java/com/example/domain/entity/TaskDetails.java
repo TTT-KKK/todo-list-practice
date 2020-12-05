@@ -8,7 +8,7 @@ public class TaskDetails implements Serializable {
 
     private Long taskId;
 
-    private String taskContent;
+    private String taskName;
 
     private Integer taskPriority;
 
@@ -38,12 +38,12 @@ public class TaskDetails implements Serializable {
         this.taskId = taskId;
     }
 
-    public String getTaskContent() {
-        return taskContent;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public void setTaskContent(String taskContent) {
-        this.taskContent = taskContent == null ? null : taskContent.trim();
+    public void setTaskName(String taskName) {
+        this.taskName = taskName == null ? null : taskName.trim();
     }
 
     public Integer getTaskPriority() {
@@ -94,7 +94,7 @@ public class TaskDetails implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", taskDetailId=").append(taskDetailId);
         sb.append(", taskId=").append(taskId);
-        sb.append(", taskContent=").append(taskContent);
+        sb.append(", taskName=").append(taskName);
         sb.append(", taskPriority=").append(taskPriority);
         sb.append(", createdAt=").append(createdAt);
         sb.append(", createdBy=").append(createdBy);
@@ -119,7 +119,7 @@ public class TaskDetails implements Serializable {
         TaskDetails other = (TaskDetails) that;
         return (this.getTaskDetailId() == null ? other.getTaskDetailId() == null : this.getTaskDetailId().equals(other.getTaskDetailId()))
             && (this.getTaskId() == null ? other.getTaskId() == null : this.getTaskId().equals(other.getTaskId()))
-            && (this.getTaskContent() == null ? other.getTaskContent() == null : this.getTaskContent().equals(other.getTaskContent()))
+            && (this.getTaskName() == null ? other.getTaskName() == null : this.getTaskName().equals(other.getTaskName()))
             && (this.getTaskPriority() == null ? other.getTaskPriority() == null : this.getTaskPriority().equals(other.getTaskPriority()))
             && (this.getCreatedAt() == null ? other.getCreatedAt() == null : this.getCreatedAt().equals(other.getCreatedAt()))
             && (this.getCreatedBy() == null ? other.getCreatedBy() == null : this.getCreatedBy().equals(other.getCreatedBy()))
@@ -133,7 +133,7 @@ public class TaskDetails implements Serializable {
         int result = 1;
         result = prime * result + ((getTaskDetailId() == null) ? 0 : getTaskDetailId().hashCode());
         result = prime * result + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
-        result = prime * result + ((getTaskContent() == null) ? 0 : getTaskContent().hashCode());
+        result = prime * result + ((getTaskName() == null) ? 0 : getTaskName().hashCode());
         result = prime * result + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode());
         result = prime * result + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         result = prime * result + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

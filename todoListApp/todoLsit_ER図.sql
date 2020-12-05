@@ -23,7 +23,7 @@ CREATE TABLE todoListdb.m_priority
 CREATE TABLE todoListdb.task
 (
 	task_id bigint NOT NULL AUTO_INCREMENT,
-	task_content varchar(128) NOT NULL,
+	task_name varchar(128) NOT NULL,
 	task_end_at timestamp,
 	created_at timestamp NOT NULL,
 	created_by varchar(128) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE todoListdb.task_details
 (
 	task_detail_id bigint NOT NULL AUTO_INCREMENT,
 	task_id bigint NOT NULL,
-	task_content varchar(128),
+	task_name varchar(128),
 	task_priority int(1) NOT NULL,
 	created_at timestamp NOT NULL,
 	created_by varchar(128) NOT NULL,
