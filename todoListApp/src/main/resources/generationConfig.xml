@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- jdbcPath -->
+	<classPathEntry location="C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.22.jar" />
+
+	<context id="todolistdb" targetRuntime="MyBatis3">
+		<!-- @Mapperを追加する -->
+		<plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin" />
+		<!-- Serializableインターフェース追加 -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- toStringメソッド追加 -->
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<!-- equalsメソッドとhashCodeメソッド追加 -->
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+
+		<!-- コメント生成の抑制 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<!-- コメントは生成しない(true) -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- JDBCの設定 -->
+		<jdbcConnection
+			driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://trdkigsever.mysql.database.azure.com:3306/todolistdb?characterEncoding=UTF-8&amp;serverTimezone=JST"
+			userId="trdkigadmin@trdkigsever"
+			password="20201103ad!">
+			<!-- MySQLschema対応 -->
+			<property name="nullCatalogMeansCurrent" value="true"/>
+		</jdbcConnection>
+
+		<!-- 自動生成するEntityの設定 -->
+		<!-- モデル生成 -->
+		<javaModelGenerator
+			targetPackage="com.example.domain.entity"
+			targetProject="todoListApp/src/main/java/">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- Mapper XML生成 -->
+		<sqlMapGenerator
+			targetPackage="com.example.domain.mapper"
+			targetProject="todoListApp/src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- Mapper生成 -->
+		<javaClientGenerator
+			targetPackage="com.example.domain.mapper"
+			targetProject="todoListApp/src/main/java/"
+			type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 生成対象のテーブル -->
+		<table tableName="m_priority" modelType="flat" />
+		<table tableName="task" modelType="flat" />
+		<table tableName="users" modelType="flat" />
+	</context>
+</generatorConfiguration>
