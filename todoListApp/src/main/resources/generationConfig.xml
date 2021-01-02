@@ -58,7 +58,6 @@
 		<!-- 生成対象のテーブル -->
 		<table tableName="m_priority" modelType="flat" />
 		<table tableName="task" modelType="flat" />
-		<table tableName="task_details" modelType="flat" />
 		<table tableName="users" modelType="flat" />
 	</context>
 </generatorConfiguration>
