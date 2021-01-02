@@ -5,11 +5,14 @@
     <id column="task_id" jdbcType="BIGINT" property="taskId" />
     <result column="task_name" jdbcType="VARCHAR" property="taskName" />
     <result column="task_end_at" jdbcType="TIMESTAMP" property="taskEndAt" />
+    <result column="task_memo" jdbcType="VARCHAR" property="taskMemo" />
+    <result column="priority_id" jdbcType="INTEGER" property="priorityId" />
     <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
     <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
     <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
     <result column="updated_by" jdbcType="VARCHAR" property="updatedBy" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="is_done" jdbcType="TINYINT" property="isDone" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,8 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    task_id, task_name, task_end_at, created_at, created_by, updated_at, updated_by, 
-    user_id
+    task_id, task_name, task_end_at, task_memo, priority_id, created_at, created_by, 
+    updated_at, updated_by, user_id, is_done
   </sql>
   <select id="selectByExample" parameterType="com.example.domain.entity.TaskExample" resultMap="BaseResultMap">
     select
@@ -105,11 +108,13 @@
   </delete>
   <insert id="insert" parameterType="com.example.domain.entity.Task">
     insert into task (task_id, task_name, task_end_at, 
-      created_at, created_by, updated_at, 
-      updated_by, user_id)
+      task_memo, priority_id, created_at, 
+      created_by, updated_at, updated_by, 
+      user_id, is_done)
     values (#{taskId,jdbcType=BIGINT}, #{taskName,jdbcType=VARCHAR}, #{taskEndAt,jdbcType=TIMESTAMP}, 
-      #{createdAt,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}, #{updatedAt,jdbcType=TIMESTAMP}, 
-      #{updatedBy,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT})
+      #{taskMemo,jdbcType=VARCHAR}, #{priorityId,jdbcType=INTEGER}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{createdBy,jdbcType=VARCHAR}, #{updatedAt,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=BIGINT}, #{isDone,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.example.domain.entity.Task">
     insert into task
@@ -122,6 +127,12 @@
       </if>
       <if test="taskEndAt != null">
         task_end_at,
+      </if>
+      <if test="taskMemo != null">
+        task_memo,
+      </if>
+      <if test="priorityId != null">
+        priority_id,
       </if>
       <if test="createdAt != null">
         created_at,
@@ -138,6 +149,9 @@
       <if test="userId != null">
         user_id,
       </if>
+      <if test="isDone != null">
+        is_done,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="taskId != null">
@@ -148,6 +162,12 @@
       </if>
       <if test="taskEndAt != null">
         #{taskEndAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskMemo != null">
+        #{taskMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="priorityId != null">
+        #{priorityId,jdbcType=INTEGER},
       </if>
       <if test="createdAt != null">
         #{createdAt,jdbcType=TIMESTAMP},
@@ -163,6 +183,9 @@
       </if>
       <if test="userId != null">
         #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="isDone != null">
+        #{isDone,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -184,6 +207,12 @@
       <if test="record.taskEndAt != null">
         task_end_at = #{record.taskEndAt,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.taskMemo != null">
+        task_memo = #{record.taskMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.priorityId != null">
+        priority_id = #{record.priorityId,jdbcType=INTEGER},
+      </if>
       <if test="record.createdAt != null">
         created_at = #{record.createdAt,jdbcType=TIMESTAMP},
       </if>
@@ -199,6 +228,9 @@
       <if test="record.userId != null">
         user_id = #{record.userId,jdbcType=BIGINT},
       </if>
+      <if test="record.isDone != null">
+        is_done = #{record.isDone,jdbcType=TINYINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -209,11 +241,14 @@
     set task_id = #{record.taskId,jdbcType=BIGINT},
       task_name = #{record.taskName,jdbcType=VARCHAR},
       task_end_at = #{record.taskEndAt,jdbcType=TIMESTAMP},
+      task_memo = #{record.taskMemo,jdbcType=VARCHAR},
+      priority_id = #{record.priorityId,jdbcType=INTEGER},
       created_at = #{record.createdAt,jdbcType=TIMESTAMP},
       created_by = #{record.createdBy,jdbcType=VARCHAR},
       updated_at = #{record.updatedAt,jdbcType=TIMESTAMP},
       updated_by = #{record.updatedBy,jdbcType=VARCHAR},
-      user_id = #{record.userId,jdbcType=BIGINT}
+      user_id = #{record.userId,jdbcType=BIGINT},
+      is_done = #{record.isDone,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -226,6 +261,12 @@
       </if>
       <if test="taskEndAt != null">
         task_end_at = #{taskEndAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskMemo != null">
+        task_memo = #{taskMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="priorityId != null">
+        priority_id = #{priorityId,jdbcType=INTEGER},
       </if>
       <if test="createdAt != null">
         created_at = #{createdAt,jdbcType=TIMESTAMP},
@@ -242,6 +283,9 @@
       <if test="userId != null">
         user_id = #{userId,jdbcType=BIGINT},
       </if>
+      <if test="isDone != null">
+        is_done = #{isDone,jdbcType=TINYINT},
+      </if>
     </set>
     where task_id = #{taskId,jdbcType=BIGINT}
   </update>
@@ -249,11 +293,14 @@
     update task
     set task_name = #{taskName,jdbcType=VARCHAR},
       task_end_at = #{taskEndAt,jdbcType=TIMESTAMP},
+      task_memo = #{taskMemo,jdbcType=VARCHAR},
+      priority_id = #{priorityId,jdbcType=INTEGER},
       created_at = #{createdAt,jdbcType=TIMESTAMP},
       created_by = #{createdBy,jdbcType=VARCHAR},
       updated_at = #{updatedAt,jdbcType=TIMESTAMP},
       updated_by = #{updatedBy,jdbcType=VARCHAR},
-      user_id = #{userId,jdbcType=BIGINT}
+      user_id = #{userId,jdbcType=BIGINT},
+      is_done = #{isDone,jdbcType=TINYINT}
     where task_id = #{taskId,jdbcType=BIGINT}
   </update>
 </mapper>

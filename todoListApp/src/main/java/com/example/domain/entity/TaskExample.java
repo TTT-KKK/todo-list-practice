@@ -295,6 +295,136 @@ public class TaskExample {
             return (Criteria) this;
         }
 
+        public Criteria andTaskMemoIsNull() {
+            addCriterion("task_memo is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoIsNotNull() {
+            addCriterion("task_memo is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoEqualTo(String value) {
+            addCriterion("task_memo =", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoNotEqualTo(String value) {
+            addCriterion("task_memo <>", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoGreaterThan(String value) {
+            addCriterion("task_memo >", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoGreaterThanOrEqualTo(String value) {
+            addCriterion("task_memo >=", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoLessThan(String value) {
+            addCriterion("task_memo <", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoLessThanOrEqualTo(String value) {
+            addCriterion("task_memo <=", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoLike(String value) {
+            addCriterion("task_memo like", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoNotLike(String value) {
+            addCriterion("task_memo not like", value, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoIn(List<String> values) {
+            addCriterion("task_memo in", values, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoNotIn(List<String> values) {
+            addCriterion("task_memo not in", values, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoBetween(String value1, String value2) {
+            addCriterion("task_memo between", value1, value2, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andTaskMemoNotBetween(String value1, String value2) {
+            addCriterion("task_memo not between", value1, value2, "taskMemo");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdIsNull() {
+            addCriterion("priority_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdIsNotNull() {
+            addCriterion("priority_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdEqualTo(Integer value) {
+            addCriterion("priority_id =", value, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdNotEqualTo(Integer value) {
+            addCriterion("priority_id <>", value, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdGreaterThan(Integer value) {
+            addCriterion("priority_id >", value, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("priority_id >=", value, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdLessThan(Integer value) {
+            addCriterion("priority_id <", value, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdLessThanOrEqualTo(Integer value) {
+            addCriterion("priority_id <=", value, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdIn(List<Integer> values) {
+            addCriterion("priority_id in", values, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdNotIn(List<Integer> values) {
+            addCriterion("priority_id not in", values, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdBetween(Integer value1, Integer value2) {
+            addCriterion("priority_id between", value1, value2, "priorityId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriorityIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("priority_id not between", value1, value2, "priorityId");
+            return (Criteria) this;
+        }
+
         public Criteria andCreatedAtIsNull() {
             addCriterion("created_at is null");
             return (Criteria) this;
@@ -612,6 +742,66 @@ public class TaskExample {
 
         public Criteria andUserIdNotBetween(Long value1, Long value2) {
             addCriterion("user_id not between", value1, value2, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneIsNull() {
+            addCriterion("is_done is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneIsNotNull() {
+            addCriterion("is_done is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneEqualTo(Byte value) {
+            addCriterion("is_done =", value, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneNotEqualTo(Byte value) {
+            addCriterion("is_done <>", value, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneGreaterThan(Byte value) {
+            addCriterion("is_done >", value, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_done >=", value, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneLessThan(Byte value) {
+            addCriterion("is_done <", value, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneLessThanOrEqualTo(Byte value) {
+            addCriterion("is_done <=", value, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneIn(List<Byte> values) {
+            addCriterion("is_done in", values, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneNotIn(List<Byte> values) {
+            addCriterion("is_done not in", values, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneBetween(Byte value1, Byte value2) {
+            addCriterion("is_done between", value1, value2, "isDone");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoneNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_done not between", value1, value2, "isDone");
             return (Criteria) this;
         }
     }
